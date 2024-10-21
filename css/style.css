@@ -1,0 +1,145 @@
+@keyframes growLogo {
+    0% {
+        width: 25px;
+        opacity: 0;
+    }
+
+    100% {
+        width: 475px;
+        opacity: 1;
+    }
+}
+
+#logo{
+    width: 25px;
+    height: auto;
+    opacity: 0;
+    animation: growLogo 5s forwards;
+}
+
+body{
+    font-family: 'Poppins', serif;
+    background-image: url("../images/concrete_seamless.png");
+    background-color: #f1f1f1;
+    /* background-size: cover; */
+    /* background-repeat: no-repeat; */
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav_links{
+    display: flex;
+    flex-direction: column;
+}
+
+.nav_links a:visited{
+    color: #50C7C7;
+    /* text-decoration-style: solid; */
+}
+
+.card > header{
+    background-color: #288088;
+    border: 2px solid #45ADAD;
+    padding: 20px 0px;
+    border-radius: 50px 50px 0px 0px;
+}
+
+.card{
+    border-radius: 50px 50px 0px 0px;
+    display: flex;
+    /* width: 450px; */
+    flex-basis: 450px;
+    /* flex: 0 0 450px; */
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.pricing{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery img{
+    border: 10px solid #50C7C7;
+    margin: 10px;
+    width: 300px;
+    height: auto;
+    /* display: flex;
+    flex-wrap: wrap; */
+}
+
+@media (min-width: 900px){
+
+    header, .nav_links{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .pricing{
+        flex-direction: row;
+    }
+
+    .card{
+        flex-basis: 275px;
+    }
+
+    body > header{
+        position: sticky;
+        top: 0;
+    }
+
+}
+
+@media (prefers-reduced-motion){
+    #logo{
+        animation: none;
+        width: 475px;
+        opacity: 1;
+    }
+}
+
+@media print{
+    body{
+        font-family: arial, helvetica;
+        background-image: none;
+    }
+
+    /* this section is needed even though it's in the media query because print mode changes the size */
+    .nav_links a{
+        flex-direction: row;
+        justify-content: space-between; /*space around?*/
+    }
+
+    .pricing{
+        flex-direction: row;
+        align-items: flex-end;
+    }
+
+    .card{
+        border: 2px solid #45ADDD;
+        flex-basis: 325px;
+    }
+
+    #gallery, .gallery{
+        display: none;
+    }
+
+    .card ul li:nth-child(2)::after{
+        content: "👍";
+        color: gold;
+    }
+
+}
