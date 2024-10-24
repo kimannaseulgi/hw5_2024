@@ -1,3 +1,4 @@
+/* animation settings for logo */
 @keyframes growLogo {
     0% {
         width: 25px;
@@ -10,6 +11,7 @@
     }
 }
 
+/* logo animation */
 #logo{
     width: 25px;
     height: auto;
@@ -53,20 +55,14 @@ header{
 
 .card{
     border-radius: 50px 50px 0px 0px;
-    /* display: flex; */
-    /* width: 450px; */
     flex-basis: 450px;
-    /* flex: 0 0 450px; */
-    flex-direction: column;
-    flex-wrap: wrap;
 }
 
 /* set pricing class to flex and removed from card class */
 .pricing{
     display: flex;
-    flex-direction: column;
+    flex-flow: row wrap;
     justify-content: center;
-    align-items: center;
 }
 
 .gallery{
@@ -84,15 +80,21 @@ header{
     flex-wrap: wrap; */
 }
 
-@media (min-width: 900px){
+/* for viewports larger than 900px */
+@media screen and (min-width: 900px){
 
-    header, .nav_links{
-        flex-direction: row;
+    header{
+        display: flex;
+        flex-flow: row wrap;
         justify-content: space-between;
     }
 
-    .pricing{
+    .nav_links{
         flex-direction: row;
+    }
+
+    .pricing{
+        align-items: center;
     }
 
     .card{
@@ -106,7 +108,8 @@ header{
 
 }
 
-@media (prefers-reduced-motion){
+/* reduce motion for logo animation */
+@media all and (prefers-reduced-motion:reduce){
     #logo{
         animation: none;
         width: 475px;
@@ -114,6 +117,7 @@ header{
     }
 }
 
+/* print preview formatting */
 @media print{
     body{
         font-family: arial, helvetica;
@@ -122,15 +126,21 @@ header{
 
     /* this section is needed even though it's in the media query because print mode changes the size */
 
+    nav{
+        width: 100%;
+    }
+
     .nav_links {
         flex-direction: row;
-        justify-content: space-between; /*space around?*/
+        /* flex-flow: row wrap; */
+        justify-content: space-around;
     }
 
 
     .pricing{
         flex-direction: row;
         align-items: flex-end;
+        flex-flow: nowrap;
     }
 
     .card{
@@ -138,6 +148,7 @@ header{
         flex-basis: 325px;
     }
 
+    /* gallery is hidden in print preview */
     #gallery, .gallery{
         display: none;
     }
