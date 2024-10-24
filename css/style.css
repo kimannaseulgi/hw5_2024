@@ -40,7 +40,8 @@ header{
     flex-direction: column;
 }
 
-/* styling it with standard blue color according to the pictures and videos show */
+/* styling it with standard blue color according to the pictures and videos shown */
+/* prevents clicked on links from changing color */
 .nav_links a:visited{
     color: #0000ff;
     /* text-decoration-style: solid; */
