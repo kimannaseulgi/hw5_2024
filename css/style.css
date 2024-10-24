@@ -17,6 +17,7 @@
     animation: growLogo 5s forwards;
 }
 
+/* using relative path for font family link due to it not showing up in inspect*/
 body{
     font-family: 'Poppins', serif;
     background-image: url("../images/concrete_seamless.png");
@@ -37,8 +38,9 @@ header{
     flex-direction: column;
 }
 
+/* styling it with standard blue color according to the pictures and videos show */
 .nav_links a:visited{
-    color: #50C7C7;
+    color: #0000ff;
     /* text-decoration-style: solid; */
 }
 
@@ -51,7 +53,7 @@ header{
 
 .card{
     border-radius: 50px 50px 0px 0px;
-    display: flex;
+    /* display: flex; */
     /* width: 450px; */
     flex-basis: 450px;
     /* flex: 0 0 450px; */
@@ -59,6 +61,7 @@ header{
     flex-wrap: wrap;
 }
 
+/* set pricing class to flex and removed from card class */
 .pricing{
     display: flex;
     flex-direction: column;
@@ -118,10 +121,12 @@ header{
     }
 
     /* this section is needed even though it's in the media query because print mode changes the size */
-    .nav_links a{
+
+    .nav_links {
         flex-direction: row;
         justify-content: space-between; /*space around?*/
     }
+
 
     .pricing{
         flex-direction: row;
